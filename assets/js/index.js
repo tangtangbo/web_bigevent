@@ -42,18 +42,18 @@ function getUserInfo() {
             renderAvatar(res.data)
         },
 
-        //无论成功还是失败都会调用complete 函数
-        complete: function(res) {
-            console.log('执行了complete回调')
-            console.log(res);
-            //在complete回调函数中，可以使用res.responseJSON 拿到服务器响应回来的数据
-            if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
-                //1.强制清空 token
-                localStorage.removeItem('token')
-                    //2.强制跳转到登录页面
-                location.href = '/login.html'
-            }
-        }
+        // //无论成功还是失败都会调用complete 函数
+        // // complete: function(res) {
+        // //     console.log('执行了complete回调')
+        // //     console.log(res);
+        // //     //在complete回调函数中，可以使用res.responseJSON 拿到服务器响应回来的数据
+        // //     if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
+        // //         //1.强制清空 token
+        // //         localStorage.removeItem('token')
+        // //             //2.强制跳转到登录页面
+        // //         location.href = '/login.html'
+        // //     }
+        // }
     })
 }
 
